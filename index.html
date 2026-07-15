@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A responsive password generator with strength meter and copy-to-clipboard support." />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-panel" aria-labelledby="app-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Vanilla JavaScript</p>
+          <h1 id="app-title">Password Generator</h1>
+          <p class="subtitle">Create strong, customizable passwords in a clean responsive interface.</p>
+        </div>
+
+        <div class="generator-card">
+          <div class="password-display" aria-live="polite">
+            <input id="password" type="text" readonly value="Click Generate Password" aria-label="Generated password" />
+            <button id="copy-btn" class="secondary-btn" type="button">Copy</button>
+          </div>
+
+          <div class="strength-row" aria-label="Password strength">
+            <span class="strength-label">Strength</span>
+            <div class="strength-meter" aria-hidden="true">
+              <span id="strength-fill"></span>
+            </div>
+            <span id="strength-text" class="strength-text">Weak</span>
+          </div>
+
+          <div class="length-section">
+            <div class="section-head">
+              <label for="length">Password Length</label>
+              <output id="length-value" for="length">16</output>
+            </div>
+            <input id="length" type="range" min="8" max="32" value="16" />
+          </div>
+
+          <div class="options-grid" role="group" aria-label="Password options">
+            <label class="option">
+              <input type="checkbox" id="uppercase" checked />
+              <span>Uppercase</span>
+            </label>
+            <label class="option">
+              <input type="checkbox" id="lowercase" checked />
+              <span>Lowercase</span>
+            </label>
+            <label class="option">
+              <input type="checkbox" id="numbers" checked />
+              <span>Numbers</span>
+            </label>
+            <label class="option">
+              <input type="checkbox" id="symbols" checked />
+              <span>Symbols</span>
+            </label>
+          </div>
+
+          <button id="generate-btn" class="generate-btn" type="button">Generate Password</button>
+          <p id="status" class="status" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
